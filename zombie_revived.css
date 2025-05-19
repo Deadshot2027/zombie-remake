@@ -92,12 +92,8 @@ h4 {
   font-size: 0.8em;
   color: #cecece;
 }
-#loginPage h1 {
-  display: none;
-}
-#loginPage .padded-left.padded-right.padded-bottom-page {
-  margin-top: 10px;
-}
+
+/* Styles from zombie_revived.css not related to #loginPage */
 body:has(#loginPage:not(.hide)) .skinHeader {
   display: none !important;
 }
@@ -107,51 +103,7 @@ body:has(#loginPage:not(.hide)) {
 body:not(:has(#loginPage:not(.hide))) .skinHeader {
   display: flex !important;
 }
-#loginPage .readOnlyContent,
-#loginPage form {
-  max-width: 22em;
-}
-#loginPage .padded-left.padded-right.padded-bottom-page {
-  margin-top: 4em !important;
-  margin-left: auto;
-  margin-right: auto;
-  backdrop-filter: blur(1px);
-  border-radius: var(--rounding-large);
-  overflow: auto;
-}
-#loginPage .squareCard {
-  width: 33%;
-}
-#loginPage form {
-  padding-top: 2em;
-}
-#loginPage .sectionTitle {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 1.2em !important;
-}
-#loginPage .pageTitleWithDefaultLogo,
-.layout-mobile .detailImageContainer .card.portraitCard {
-  display: none !important;
-}
-#loginPage {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.5)),
-    url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/img/loginImg/login.jpg);
-  background-position: top left;
-  background-size: cover;
-  background-attachment: fixed;
-  animation: 150s infinite alternate backgroundAnimation;
-  z-index: 2;
-  overflow: hidden;
-}
-#loginPage .raised.cancel.block.btnForgotPassword.emby-button {
-  display: none;
-}
-div#loginPage {
-  margin-top: 0 !important;
-}
+
 .manualLoginForm {
   height: 100%;
   width: 100%;
@@ -571,10 +523,10 @@ a[href*="anidb.net"] {
 }
 .adminDrawerLogo img,
 imgLogoIcon {
-  content: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+  content: url(https://github.com/Deadshot2027/jellyfin-stuff/blob/main/Adobe%20Express%20-%20file.png?raw=true) !important;
 }
 .pageTitleWithLogo {
-  background-image: url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@main/logo/jellyfin-logo-light.png) !important;
+  background-image: url(https://github.com/Deadshot2027/jellyfin-stuff/blob/main/Adobe%20Express%20-%20file.png?raw=true) !important;
 }
 #txtCustomCss,
 #txtLocalCustomCss {
@@ -2996,4 +2948,146 @@ layout-mobile .detailPagePrimaryContent {
     top: 20vh;
     width: 25em;
   }
+}
+
+/* Custom login page of awesome - from css1.css */
+#loginPage {
+  background-image: url('/Branding/Splashscreen?format=jpg&foregroundLayer=20.0');
+  background-position: top left;
+  background-size: 200%;
+  background-attachment: fixed;
+  animation: backgroundAnimation 150s infinite alternate;
+  z-index: 2;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: top left;
+  }
+  25% {
+    background-position: bottom right;
+  }
+  50% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+.skinHeader.semiTransparent.noHeaderRight {
+  background: transparent !important;
+}
+
+div#loginPage {
+  margin-top: 0 !important;
+  overflow: hidden scroll;
+}
+
+/* Removed the "Sign In" text */
+#loginPage h1::after {
+  content: "";
+}
+
+#loginPage h1 {
+  font-weight: 700;
+  font-size: 0;
+  margin-bottom: 21.44px;
+  margin-top: 32px !important;
+  text-align: left;
+}
+
+.inputContainer {
+  margin-bottom: 1.8em;
+  margin-top: 1.8em;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page {
+  background: #000000bf;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  margin: 21px;
+  position: absolute;
+  border-radius: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 3em !important;
+}
+
+#loginPage .readOnlyContent {
+  padding: 0 !important;
+  width: 100% !important;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.manualLoginForm { /* This was duplicated, keeping the one from css1.css as per instruction */
+  height: 100%;
+  width: 100%;
+}
+
+#loginPage .inputContainer {
+  background: #333;
+  border-radius: var(--rounding); /* Assuming --rounding is defined in :root */
+  height: 4em;
+  position: relative;
+}
+
+#loginPage .inputLabel.inputLabelFocused,
+#loginPage .inputLabel:not(.inputLabel-float) {
+  font-size: 0.8em;
+  left: 4%;
+  top: 4%;
+  transform: none;
+}
+
+.visualLoginForm {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Center user profiles */
+#divUsers {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+}
+
+#loginPage .emby-input {
+  height: 100%;
+  border: none;
+  background: transparent !important;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none !important;
+  padding: 4% !important;
+  font-size: 1.1em;
+  border: none !important;
+}
+
+#loginPage .inputLabel {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  font-weight: 300;
+  transition: 0.2s ease;
+  color: #8c8c8c;
+}
+
+#loginPage .inputContainer:focus,
+#loginPage .inputContainer:focus-within {
+  background: #454545;
 }
