@@ -2952,7 +2952,7 @@ layout-mobile .detailPagePrimaryContent {
 
 /* Custom login page of awesome - from css1.css */
 #loginPage {
-  background-image: url('/Branding/Splashscreen?format=jpg&foregroundLayer=20.0');
+  background-image: url('/Branding/Splashscreen?format=jpg&foregroundLayer=1');
   background-position: top left;
   background-size: 200%;
   background-attachment: fixed;
